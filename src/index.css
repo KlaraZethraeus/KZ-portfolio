@@ -1,5 +1,6 @@
+/* global css */
 body {
-  margin: 0;
+  /* margin: 40; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'Gaegu-Light';
+  src: local('Gaegu-Light'),
+    url('../src/fonts/Gaegu/Gaegu-Light.ttf') format ('truetype');
+  font-weight: 300;
+  font-style: light;
+}
+
+.logo {
+  font-family: 'Gaegu-Light', sans-serif;
 }

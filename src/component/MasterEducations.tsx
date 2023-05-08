@@ -99,7 +99,6 @@ const WorkExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
 `
 
 const JobContainer = styled.div`
@@ -125,18 +124,11 @@ const Customers = styled.div`
   font-size: 0.7rem;
   font-style: italic;
   font-weight: 300;
-
-  /* margin-bottom: 0.2rem;
-  padding-right: 0.5rem; */
 `
 const StyledDescription = styled.ul`
   font-size: 0.7rem;
 `
 const StyledCustomers = styled.ul`
   font-size: 0.7rem;
-  /* font-style: italic;
-  line-height: 1.3;
-  list-style: none;
-  font-weight: 400; */
 `
 export default MasterEducations

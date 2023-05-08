@@ -3,23 +3,28 @@ const skills = [
   'Agil utveckling',
   'Web development',
   'Data scripting',
-  'Data systems (PHP,JavaScript)',
+  'Data systems',
+  'PHP,JavaScript',
   'Interaction design',
   'Digital images',
-  'Project management',
+  'Project mgmt',
   'Photography',
   'Image editing',
   'Ceramics',
-  'Filosofy',
+  'Philosphy',
 ]
-
 const AkademyCourses = () => {
   return (
     <Table>
       <tbody>
         <TableRow>
           <TableColumn>
-            {skills.slice(0, 12).map((skill) => (
+            {skills.slice(0, 6).map((skill) => (
+              <ColumnText key={skill}>{skill}</ColumnText>
+            ))}
+          </TableColumn>
+          <TableColumn>
+            {skills.slice(6).map((skill) => (
               <ColumnText key={skill}>{skill}</ColumnText>
             ))}
           </TableColumn>
@@ -29,32 +34,45 @@ const AkademyCourses = () => {
   )
 }
 
+// const AkademyCourses = () => {
+//   return (
+//     <Table>
+//       <tbody>
+//         <TableRow>
+//           <TableColumn>
+//             {skills.slice(0, 12).map((skill) => (
+//               <ColumnText key={skill}>{skill}</ColumnText>
+//             ))}
+//           </TableColumn>
+//           <TableColumn>
+//             {skills.slice(0, 6).map((skill) => (
+//               <ColumnText key={skill}>{}</ColumnText>
+//             ))}
+//           </TableColumn>
+//         </TableRow>
+//       </tbody>
+//     </Table>
+//   )
+// }
+
 const Table = styled.table`
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 1.5rem;
-  /* margin: 1 0 0.8rem 0; */
 `
 const TableRow = styled.tr`
   &:nth-child(even) {
   }
 `
 const TableColumn = styled.td`
-  text-align: left;
-  /* padding: 0.5rem 1.5rem 0 0; */
+  /* text-align: left; */
 `
-// const ColumnTitle = styled.h2`
-//   font-size: 0.8rem;
-//   font-style: italic;
-//   font-weight: 300;
-//   margin-bottom: 0.4rem;
-// `
 const ColumnText = styled.p`
   font-size: 0.8rem;
-  /* margin-bottom: 0.2rem; */
-  line-height: 1.5rem;
-  letter-spacing: 0.02rem;
-  padding-right: 0.8rem;
+  line-height: 1.1rem;
+  letter-spacing: 0.01rem;
+  margin-left: 1.2rem;
+  margin-right: 3rem;
 `
 
 export default AkademyCourses

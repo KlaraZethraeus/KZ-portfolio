@@ -32,11 +32,11 @@ const SkillsPersonal = () => {
 }
 
 const Table = styled.table`
+  display: grid;
+  justify-content: center;
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 1.5rem;
-
-  /* margin: 1 0 0.8rem 0; */
+  margin-bottom: 0.5rem;
 `
 const TableRow = styled.tr`
   &:nth-child(even) {
@@ -44,14 +44,22 @@ const TableRow = styled.tr`
 `
 const TableColumn = styled.td`
   text-align: left;
-  /* padding: 1rem 1rem 0.4rem 0; */
 `
 const ColumnText = styled.p`
-  font-size: 0.8rem;
-  /* margin-bottom: 0.2rem; */
-  line-height: 1.5rem;
-  letter-spacing: 0.02rem;
-  /* margin-top: 0.5rem; */
+  font-size: 1rem;
+  line-height: 1.4rem;
+  align-items: center;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  margin-bottom: 0.2rem;
+  @media only screen and (min-width: 600px) {
+    margin-left: 4.5rem;
+    margin-right: 4.5rem;
+  }
+  @media only screen and (min-width: 768px) {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
 `
 
 export default SkillsPersonal

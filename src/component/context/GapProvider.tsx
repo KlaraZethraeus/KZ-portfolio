@@ -1,5 +1,6 @@
+//gap/images
 import { GapContext } from './GapContext'
-import { useState } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 
 interface IGapProviderProps {
   children: React.ReactNode
@@ -8,11 +9,11 @@ interface IGapProviderProps {
 export const GapProvider = ({ children }: IGapProviderProps) => {
   const [hasGap, setHasGap] = useState(false)
 
-  const toggleGap = () => setHasGap(!hasGap)
+  const toggleGap = useCallback(() => {
+    setHasGap((hasGap) => !hasGap)
+  }, [])
 
-  return (
-    <GapContext.Provider value={{ hasGap, toggleGap }}>
-      {children}
-    </GapContext.Provider>
-  )
+  const value = useMemo(() => ({ hasGap, toggleGap }), [hasGap, toggleGap])
+
+  return <GapContext.Provider value={value}>{children}</GapContext.Provider>
 }

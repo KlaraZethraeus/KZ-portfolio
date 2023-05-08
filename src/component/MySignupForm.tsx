@@ -2,7 +2,9 @@ import React, { useContext } from 'react'
 import { Formik, Form, useField } from 'formik'
 import * as Yup from 'yup'
 import '../css/StyleMySignup.css'
-import SignupContext from './SignupContext'
+import { SignupContext } from './context/SignupContext'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 interface MyTextInputProps {
   label: string
@@ -74,13 +76,11 @@ const MySelect = ({ label, id, ...props }: MySelectProps) => {
 }
 
 const SignupForm = () => {
-  const { formData, setFormData } = useContext(SignupContext)
-  // const { name } = useParams()
+  const { setFormData } = useContext(SignupContext)
 
+  // const { name } = useParams()
   return (
     <>
-      <h1>Lets grab a coffe and take it from there!</h1>
-      <p>Looking forward to here from you {}</p>
       <Formik
         initialValues={{
           firstName: '',
@@ -111,56 +111,99 @@ const SignupForm = () => {
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(formData, null, 2))
+            //   alert(JSON.stringify(formData, null, 2))
+            //   setFormData({
+            //     firstName: values.firstName,
+            //     lastName: values.lastName,
+            //     email: values.email,
+            //     subject: values.Subject,
+            //   })
+            //   setSubmitting(false)
+            // }, 400)
+            toast.success(
+              `Hi ${values.firstName}!
+               Thanks for contacting me. I will shortly get back to you.
+                 All the best Klara`
+            )
             setFormData({
               firstName: values.firstName,
               lastName: values.lastName,
               email: values.email,
-              jobType: values.jobType,
+              subject: values.jobType,
             })
             setSubmitting(false)
           }, 400)
         }}
       >
-        <Form>
-          <MyTextInput
-            label="First Name"
-            name="firstName"
-            type="text"
-            placeholder="Klara"
-            id="firstName"
-          />
+        {({ isSubmitting }) => (
+          <Form>
+            <MyTextInput
+              label="First Name"
+              name="firstName"
+              type="text"
+              placeholder="Klara"
+              id="firstName"
+            />
 
-          <MyTextInput
-            label="Last Name"
-            name="lastName"
-            type="text"
-            placeholder="Zethraeus"
-            id="firstName"
-          />
+            <MyTextInput
+              label="Last Name"
+              name="lastName"
+              type="text"
+              placeholder="Zethraeus"
+              id="firstName"
+            />
 
-          <MyTextInput
-            label="Email Address"
-            name="email"
-            type="email"
-            placeholder="klara@kz.com"
-            id="email"
-          />
+            <MyTextInput
+              label="Email Address"
+              name="email"
+              type="email"
+              placeholder="klara@aroundkz.com"
+              id="email"
+            />
 
-          <MySelect label="About" name="jobType">
-            <option value="">Subject</option>
-            <option value="designer">Designer</option>
-            <option value="development">Developer</option>
-            <option value="product">Product Manager</option>
-            <option value="other">Other</option>
-          </MySelect>
+            <MySelect label="" name="jobType">
+              <option value="">Subject</option>
+              <option value="designer">Designer</option>
+              <option value="development">Developer</option>
+              <option value="product">Product Manager</option>
+              <option value="other">Other</option>
+            </MySelect>
 
-          <MyCheckbox name="acceptedTerms">
-            I accept the terms of GDPR
-          </MyCheckbox>
-
-          <button type="submit">Submit</button>
-        </Form>
+            <MyCheckbox name="acceptedTerms">
+              I accept the terms of GDPR
+            </MyCheckbox>
+            {/* const notify = () => toast("Wow so easy!"); */}
+            <button
+              // onClick={() =>
+              //   toast(
+              //     `Thanks for contacting me ${'hej'}! I will get back to you soon.`
+              //   )
+              // }
+              type="submit"
+            >
+              Submit
+            </button>
+            <ToastContainer
+              className="foo"
+              style={{
+                width: '20rem',
+                height: '10rem',
+                fontSize: '1rem',
+                margin: '1.5rem 1rem 3rem 2rem',
+                padding: '1rem',
+                textAlign: 'center',
+                lineHeight: '1.5',
+                fontStyle: 'italic',
+                fontFamily: 'Arial, sans-serif',
+              }}
+              position="bottom-right"
+              autoClose={4000}
+              hideProgressBar={true}
+              closeOnClick
+              icon={false}
+            />
+          </Form>
+        )}
       </Formik>
     </>
   )

@@ -1,0 +1,194 @@
+.about-me {
+  display: grid;
+  padding: 20px;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .about-me {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+.portrait {
+  position: relative;
+  margin-bottom: -4.5rem;
+}
+
+.portrait h1 {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  font-size: 2.5rem;
+  padding: 0;
+  margin-left: 2.5rem;
+  margin-top: 0.5rem;
+}
+.portrait p {
+  font-size: 1rem;
+  position: relative;
+  text-align: left;
+  top: -4.5rem;
+  margin-left: 5rem;
+  margin-right: 0.5rem;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  z-index: 0;
+}
+
+.image h3 {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  font-size: 1.6rem;
+  padding: 0;
+  margin-left: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  font-family: Ubuntu;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.images {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+.personalskills h3 {
+  text-align: left;
+  position: relative;
+  font-size: 1.6rem;
+  margin-left: 0.1rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.1rem;
+  font-family: Ubuntu;
+}
+.important {
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-family: Ubuntu;
+  font-weight: 500;
+  text-align: left;
+}
+
+.inspiration {
+  font-size: 1rem;
+  position: relative;
+  text-align: left;
+  /* top: -0.5rem; */
+  margin-left: 1.8rem;
+  margin-right: 1.8rem;
+  /* border-style: double; */
+  /* padding: 0.5rem 0.5rem 0.5rem 0.5rem; */
+  z-index: 0;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+  }
+
+  .portrait h1 {
+    text-align: left;
+    position: relative;
+    /* z-index: 1; */
+    font-size: 3.5rem;
+    padding-left: 3rem;
+    margin-left: 2rem;
+    /* margin-left: 2.5rem; */
+    margin-top: 0.5rem;
+  }
+  .portrait p {
+    font-size: 1rem;
+    position: relative;
+    text-align: left;
+    bottom: 0.5rem;
+    /* margin-left: 5rem; */
+
+    padding: 2.5rem;
+    /* z-index: 0; */
+  }
+  .first-column {
+    grid-column: 1 / span 1;
+  }
+
+  .second-column {
+    grid-column: 2 / span 1;
+  }
+}
+
+/* @media only screen and (min-width: 768px) {
+  .image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .images > div {
+    margin-bottom: 0;
+  }
+
+  .images > .personalskills {
+    order: -1;
+    align-self: start;
+  }
+
+  .images > .inspiration {
+    margin-top: 2rem;
+  }
+} */
+
+/* @media only screen and (min-width: 992px) {
+} */
+
+/* @media only screen and (min-width: 1200px) {
+  .about-me {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} */
+/* @media only screen and (min-width: 600px) {
+  .about-me {
+    padding: 4rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about-me {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(768px, 1fr)); */
+/* grid-gap: 2rem;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+
+
+
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+  .about-me {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} */

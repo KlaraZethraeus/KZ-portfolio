@@ -1,30 +1,13 @@
-// import { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import SignupForm from './MySignupForm'
-// import ImageList, { ImageSizeContext } from './ImageList'
-// import { PlaceImage } from './ImageSize'
-// import { places } from './DataContext'
-// import ImageSize from './ImageSize'
 
 const me = {
-  name: 'Klara Zethraeus',
+  name: 'Lets grab a coffee...',
   imageSrc: './bild_86.jpg',
 }
 
-// function AboutMeComponent() {
-//   const imageSize = useContext(ImageSizeContext);
-// type Props = {
-//   setIsLarge: React.Dispatch<React.SetStateAction<boolean>>
-//   isLarge: boolean
-// }
-
-// function
-const AboutMe = () => {
-  // const imageSizeContext = useContext(ImageSizeContext)
-  // const AboutMe = ({ setIsLarge, isLarge }: Props) => {
-  //   const imageSize = useContext(ImageSizeContext)
-
+const ContactMe = () => {
   return (
     <Container>
       <Header>
@@ -33,96 +16,61 @@ const AboutMe = () => {
       </Header>
       <Content>
         <Text>
-          Hej! Jag heter Klara och jag älskar att designa och bygga saker för
-          webben. Om du vill samarbeta, anlita mig eller bara säga hej, tveka
-          inte att skicka ett meddelande med formuläret nedan.
-          <Link to="/">Hem</Link>
+          Lets meet and see where it takes us. Maybe we can make some miracle
+          happends.
+          <Link to="/">back to portfolio</Link>
         </Text>
       </Content>
-      {/* <ImageSizeContext.Provider value={{ imageSize, setImageSize }}>
-        <ImageList images={places} />
-        <div>
-          {places.map((place) => (
-            <div key={place.id}>
-              {/* <PlaceImage place={place} /> */}
-      {/*} </Container> <p>
-                <b>{place.name}</b>
-                {': ' + place.description}
-              </p>
-            </div>
-          ))}
-        </div> */}
-      {/* {imageSize === 'small' ? (
-          <Img src="./small-profile.jpg" alt="Profile" />
-        ) : (
-          <Img src="./large-profile.jpg" alt="Profile" />
-        )}
-        <ImageSize /> */}
-      {/* </ImageSizeContext.Provider> */}
-      <SignupForm />
+      <div>
+        <SignupForm />
+      </div>
     </Container>
   )
 }
 
-//hela
 const Container = styled.div`
-  //bättre utan på mob??
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  //ta bort mob, lägg till desk
   align-items: center;
-  //mobile, ta bort på desktop
-  min-height: 100vh;
   background-color: #cad9d7;
-  /* margin-bottom: 20rem; */
+  margin: 2rem 0 3rem 0rem;
   @media (min-width: 768px) {
     justify-content: center;
   }
 `
-//namn + bild
+
 const Header = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  right: 25px;
-  //gör så att img hamnar lite över texten
-  /* margin-right: 15rem; */
   z-index: 1;
 `
-//namn
+
 const Heading = styled.h1`
-  /* position: relative; */
-  font-size: 2.8rem;
+  font-size: 2.1rem;
   font-family: Ubuntu;
   font-weight: 400;
-  /* margin-bottom: 70rem; */
-  /* margin-left: 0.5rem; */
-  margin-top: 1.5rem;
-  margin-bottom: 16rem;
-  padding: 0.5rem;
-  margin-left: 0.6rem;
+  margin-top: 1.2rem;
+  margin-bottom: 15rem;
+  padding: 1.1rem;
+  margin-left: 2.8rem;
+  margin-right: 1rem;
   color: #333;
-  /* margin-right: 15rem; */
   z-index: 1;
 `
-//bild
 const Img = styled.img`
   position: absolute;
-  top: 28px;
-  left: 50px;
-  /* left: 0px; */
-  width: 100%;
+  top: 22px;
+  left: 45px;
+  width: 90%;
   max-width: 30rem;
   z-index: 0;
-  /* filter: grayscale(100%);*/
 `
 
 const Content = styled.div`
-  /* max-width: 40rem; */
-  /* margin-left: auto; */
-  /* margin-top: 1rem; */
-  margin: 4.2rem 3rem 2rem 0.8rem;
+  max-width: 22rem;
+
+  margin: 2rem 2.2rem 2rem 2rem;
   padding: 3rem 2rem 2rem;
   background-color: #f7f7f7;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
@@ -135,14 +83,15 @@ const Content = styled.div`
 
 const Text = styled.p`
   font-size: 1.1rem;
-  line-height: 1.5;
-  /* margin-bottom: 2rem; */
+  line-height: 1.2;
+  margin-top: 4rem;
 `
 
 const Link = styled(NavLink)`
   display: block;
   margin-top: 2rem;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  font-style: italic;
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -152,4 +101,4 @@ const Link = styled(NavLink)`
   }
 `
 
-export default AboutMe
+export default ContactMe

@@ -1,13 +1,14 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const LogoWrapper = styled.div`
   display: flex;
-  margin-right: 30px;
+  margin-top: 4.5rem;
+  /* margin-bottom: -0.8rem; */
+  /* margin-right: 30px; */
 `
 
 const LogoImage = styled.img`
-  height: 38px;
+  height: 55px;
 
   /* margin-right: 10px; */
 `

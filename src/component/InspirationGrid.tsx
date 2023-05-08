@@ -1,30 +1,45 @@
 //
-import { useState } from 'react'
-import FetchImageJson from './FetchImageJson'
+import { useState, useMemo, useEffect } from 'react'
+// import FetchImageJson from './FetchImageJson'
 import '../css/stillebenstyle.css'
 
 interface InspirationGridProps {
   images: {
-    id: number
+    id: string
     name: string
     src: string
   }[]
 }
 
 type ImageData = {
-  id: number
+  id: string
   name: string
   src: string
 }
 
 const InspirationGrid = ({ images }: InspirationGridProps) => {
   const [loadedImages, setLoadedImages] = useState(false)
-  const [imageData, setImageData] = useState([])
+  const [imageData, setImageData] = useState<ImageData[]>([])
 
-  const handleImagesLoaded = (data: any) => {
-    setLoadedImages(true)
-    setImageData(data)
-  }
+  const handleImagesLoaded = useMemo(
+    () => (data: ImageData[]) => {
+      setLoadedImages(true)
+      setImageData(data)
+    },
+    []
+  )
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.PUBLIC_URL}/stilleben.json`)
+      const data = await response.json()
+      handleImagesLoaded(data)
+    }
+
+    fetchData()
+  }, [handleImagesLoaded])
+
+  const memoizedImageData = useMemo(() => imageData, [imageData])
 
   return (
     <div className="inspiration-grid">
@@ -34,9 +49,8 @@ const InspirationGrid = ({ images }: InspirationGridProps) => {
           <p>Image Grid Description</p>
         </div>
         <div className="grid-item item-2">
-          <FetchImageJson onImagesLoaded={handleImagesLoaded} />
           {loadedImages &&
-            imageData.map((image: ImageData) => (
+            memoizedImageData.map((image: ImageData) => (
               <img
                 key={image.id}
                 src={image.src}

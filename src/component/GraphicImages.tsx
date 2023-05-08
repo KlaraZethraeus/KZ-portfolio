@@ -1,7 +1,7 @@
 // hämtar api från fetchgraphic och visar bilderna.
-import { useState } from 'react'
-import FetchGraphic from './FetchGraphic'
+import { useState, useMemo, useEffect } from 'react'
 import '../css/stillebenstyle.css'
+
 interface InspirationGridProps {
   images: {
     id: number
@@ -18,12 +18,26 @@ type ImageData = {
 
 const GraphicImages = ({ images }: InspirationGridProps) => {
   const [loadedImages, setLoadedImages] = useState(false)
-  const [imageData, setImageData] = useState([])
+  const [imageData, setImageData] = useState<ImageData[]>([])
 
-  const handleImagesLoaded = (data: any) => {
+  const handleImagesLoaded = (data: ImageData[]) => {
     setLoadedImages(true)
     setImageData(data)
   }
+
+  // Använd useEffect för att hämta data från FetchGraphic-komponenten
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.PUBLIC_URL}/graphic-img.json`)
+      const data = await response.json()
+      handleImagesLoaded(data)
+    }
+
+    fetchData()
+  }, [])
+
+  // Använd useMemo för att memoizera imageData och undvika onödiga omladdningar
+  const memoizedImageData = useMemo(() => imageData, [imageData])
 
   return (
     <div className="inspiration-grid">
@@ -33,9 +47,8 @@ const GraphicImages = ({ images }: InspirationGridProps) => {
           <p>Image Grid Description</p>
         </div>
         <div className="grid-item item-2">
-          <FetchGraphic onImagesLoaded={handleImagesLoaded} />
           {loadedImages &&
-            imageData.map((image: ImageData, index) => (
+            memoizedImageData.map((image: ImageData, index) => (
               <img
                 key={index}
                 src={image.src}

@@ -21,7 +21,7 @@ const FetchGraphic = ({ onImagesLoaded }: Props) => {
       .catch((error) => {
         console.error(error)
       })
-  })
+  }, [onImagesLoaded])
 
   return null
 }

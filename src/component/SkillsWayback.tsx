@@ -4,11 +4,11 @@ const skills = [
   'Product',
   'Concept',
   'Graphic',
-  'Set',
+  'Typing',
   'Editorial',
   'Pattern',
   'Illustrations',
-  'Typing',
+  'Decorator',
   'Illustrator',
   'InDesign',
   'Photoshop',
@@ -41,11 +41,11 @@ const SkillsWayback = () => {
 }
 
 const Table = styled.table`
+  display: grid;
+  justify-content: center;
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 1.5rem;
-
-  /* margin: 1 0 0.8rem 0; */
 `
 const TableRow = styled.tr`
   &:nth-child(even) {
@@ -53,14 +53,13 @@ const TableRow = styled.tr`
 `
 const TableColumn = styled.td`
   text-align: left;
-  /* padding: 1rem 1rem 0.4rem 0; */
 `
 const ColumnText = styled.p`
   font-size: 0.8rem;
-  /* margin-bottom: 0.2rem; */
-  line-height: 1.5rem;
-  letter-spacing: 0.02rem;
-  /* margin-top: 0.5rem; */
+  line-height: 1rem;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 3.4rem;
 `
 
 export default SkillsWayback

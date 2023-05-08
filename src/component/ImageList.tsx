@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useMemo } from 'react'
 
 interface Image {
   id: number
@@ -27,7 +27,7 @@ export const ImageSizeContext = createContext<ImageSizeContextValue>({
 
 function ImageList({ images }: ImageListProps) {
   const [isLarge, setIsLarge] = useState(false)
-  const imageSize = isLarge ? 150 : 100
+  const imageSize = useMemo(() => (isLarge ? 150 : 100), [isLarge])
 
   return (
     <>

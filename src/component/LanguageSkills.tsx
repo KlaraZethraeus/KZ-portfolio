@@ -3,11 +3,13 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 `
 const LanguageItem = styled.div`
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
 `
 const LanguageName = styled.p`
   margin-bottom: 0.3rem;

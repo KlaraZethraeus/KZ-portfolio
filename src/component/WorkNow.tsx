@@ -1,92 +1,79 @@
 import styled from 'styled-components'
-const WorkNow = () => {
-  const jobs = [
-    {
-      year: '14',
-      title: 'Freelancer',
-      description:
-        'Creative director, stylist, advertising, product development,  business development, project management, film, exhibitions, photo, fashion shows, teaching, workshops',
-      // 'Creative Director ,Stylist, Product developmemt, Advertising, film, exhibition, fashion shows, project management, business development, teaching, workshops',
-      customers:
-        'Plaza Kvinna, Saint Laurent,  Sport Max, Lindex, Textile fashion of school, Drivhuset, TV4.',
-    },
-  ]
 
+const jobs = [
+  'C.D.',
+  'Stylist',
+  'Advertising',
+  'Photo prod.',
+  'Fashion shows',
+  'Film prod.',
+  'Exhibitions',
+  'Set design',
+  'Concept design',
+  'Teaching',
+  'Workshops',
+  'Product dev.',
+  'Business dev.',
+  'Project mgt.',
+]
+const customers = [
+  'Plaza Kvinna',
+  'Saint Laurent',
+  'Sport Max',
+  'Lindex',
+  'Swe.Textile School',
+  'Drivhuset',
+  'Television',
+  'Melodifestivalen',
+  'Louis Vuitton',
+  'Malene Birger',
+  'SVA Magazine',
+  'Institute Magazine',
+  'VGR Klimat 2030',
+  'Way out West',
+]
+
+const WorkNow = () => {
   return (
-    <WorkExperienceContainer>
-      {jobs.map((job) => (
-        <JobContainer key={job.title}>
-          <YearTitle>
-            {job.title} | {job.year}
-          </YearTitle>
-          {job.title === 'Freelancer/consultant' ? (
-            <StyledDescription>
-              {job.description.split(',').map((item, index) => (
-                <li key={index}>{item.trim()}</li>
-              ))}
-            </StyledDescription>
-          ) : (
-            <Description>{job.description}</Description>
-          )}
-          {job.title === 'Freelancer' ? (
-            <StyledCustomers>
-              {job.customers.split(',').map((item, index) => (
-                <li key={index}>{item.trim()}</li>
-              ))}
-            </StyledCustomers>
-          ) : (
-            job.customers && <Customers>{job.customers}</Customers>
-          )}
-        </JobContainer>
-      ))}
-    </WorkExperienceContainer>
+    <Table>
+      <tbody>
+        <TableRow>
+          <TableColumn>
+            {jobs.slice(0, 14).map((job) => (
+              <ColumnText key={job}>{job}</ColumnText>
+            ))}
+          </TableColumn>
+          <TableColumn>
+            {customers.map((customer) => (
+              <ColumnText key={customer}>{customer}</ColumnText>
+            ))}
+          </TableColumn>
+        </TableRow>
+      </tbody>
+    </Table>
   )
 }
 
-const WorkExperienceContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+const Table = styled.table`
+  display: grid;
+  justify-content: center;
+  border-collapse: collapse;
+  width: 100%;
   margin-bottom: 1.5rem;
 `
-
-const JobContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin-right: 0.8rem;
+const TableRow = styled.tr`
+  &:nth-child(even) {
+  }
 `
-
-const YearTitle = styled.div`
+const TableColumn = styled.td`
+'  text-align: left;
+`
+const ColumnText = styled.p`
   font-size: 0.8rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
+  line-height: 1rem;
+  align-items: center;
+  margin-left: 1.2rem;
+  margin-right: 2rem;
 `
-const Description = styled.div`
-  font-size: 0.8rem;
-  line-height: 1.3;
-  font-weight: 400;
-  /* letter-spacing: 0.5px; */
-  word-spacing: 1px;
-  padding: 0 0.5rem 0.5rem 0;
-  letter-spacing: 0.01rem;
-`
-const Customers = styled.div`
-  font-size: 0.7rem;
-  font-style: italic;
-  font-weight: 300;
-  /* padding-right: 0.5rem; */
-  line-height: 0.9rem;
-  letter-spacing: 0.01rem;
-`
-const StyledDescription = styled.p`
-  font-size: 0.7rem;
-`
-const StyledCustomers = styled.p`
-  font-size: 0.7rem;
-  /* font-style: italic;
-  line-height: 1.3;
-  list-style: none;
-  font-weight: 400; */
-`
+
 export default WorkNow

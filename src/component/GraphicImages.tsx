@@ -1,4 +1,3 @@
-// hämtar api från fetchgraphic och visar bilderna.
 import { useState, useMemo, useEffect } from 'react'
 import '../css/stillebenstyle.css'
 
@@ -25,7 +24,6 @@ const GraphicImages = ({ images }: InspirationGridProps) => {
     setImageData(data)
   }
 
-  // Använd useEffect för att hämta data från FetchGraphic-komponenten
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(`${process.env.PUBLIC_URL}/graphic-img.json`)
@@ -36,7 +34,6 @@ const GraphicImages = ({ images }: InspirationGridProps) => {
     fetchData()
   }, [])
 
-  // Använd useMemo för att memoizera imageData och undvika onödiga omladdningar
   const memoizedImageData = useMemo(() => imageData, [imageData])
 
   return (

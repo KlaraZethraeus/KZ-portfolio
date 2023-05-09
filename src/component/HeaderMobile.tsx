@@ -1,4 +1,3 @@
-//hämtas fler gg
 import { NavLink } from 'react-router-dom'
 import { useState, useMemo } from 'react'
 import { slide as Menu } from 'react-burger-menu'

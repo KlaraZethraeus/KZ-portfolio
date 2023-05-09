@@ -11,7 +11,7 @@ const WorkExperience = () => {
     },
     {
       year: '08',
-      title: 'BRAND SALESREP.',
+      title: 'BRAND SALES REP.',
       description: 'Fashionfairs Europe',
       customers: 'Sarabia, Kuyichi, Katharine Hamnett, Rickard Lindquist.',
     },
@@ -77,7 +77,8 @@ const WorkExperienceContainer = styled.div`
 const JobContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 1.5rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 `
 
 const YearTitle = styled.div`

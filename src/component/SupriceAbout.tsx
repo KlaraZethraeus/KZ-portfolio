@@ -5,11 +5,6 @@ const SkillsWayback = () => {
   return (
     <Table>
       <tbody>
-        {/* <TableRow>
-          <TableColumn colSpan={2}>
-            <ColumnTitle>in progress</ColumnTitle>
-          </TableColumn>
-        </TableRow> */}
         <TableRow>
           <TableColumn>
             {skills.slice(0, 6).map((skill) => (

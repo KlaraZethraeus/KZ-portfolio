@@ -19,7 +19,7 @@ const PortFolio = () => {
         <Hello>HELLO,</Hello>
         <Img src="./kz.jpg" alt="Profile" />
         <ImageVerticalLine />
-        <JoyText>a portrait of m.e.</JoyText>
+        <JoyText>a portrait of me.</JoyText>
         <ShortInfo>
           <ShortInfoText>
             Klara Zethraeus
@@ -36,7 +36,6 @@ const PortFolio = () => {
           </ShortInfoText>
         </ShortInfo>
       </Header>
-
       <Main>
         <Column>
           <FlexContainer>
@@ -50,36 +49,12 @@ const PortFolio = () => {
           </FlexContainer>
           <SomeSkills />
           <FlexContainer>
-            <ColumnHeading>Languages</ColumnHeading>
-          </FlexContainer>
-          <LanguageSkills />
-          <FlexContainer>
-            <ColumnHeading>Design skills</ColumnHeading>
-            <ExtraInfo>.feels like forever</ExtraInfo>
-          </FlexContainer>
-          <SkillsWayback />
-          <FlexContainer>
-            <ColumnHeading>Education</ColumnHeading>
-            <ExtraInfo>.way back</ExtraInfo>
-          </FlexContainer>
-          <EducationMixed />
-        </Column>
-        <Column>
-          <FlexContainer>
             <ColumnHeading>Work</ColumnHeading>
             <ExtraInfo>.ongoing</ExtraInfo>
           </FlexContainer>
-
           <ColumnText>
             <Design>Frelance project & customers</Design>
             <WorkNow />
-          </ColumnText>
-          <FlexContainer>
-            <ColumnHeading>Work</ColumnHeading>
-            <ExtraInfo>.a time travel</ExtraInfo>
-          </FlexContainer>
-          <ColumnText>
-            <WorkExperience />
           </ColumnText>
           <FlexContainer>
             <ColumnHeading>Akademy</ColumnHeading>
@@ -88,18 +63,34 @@ const PortFolio = () => {
           <SectionGroup>
             <AkademyCourses />
           </SectionGroup>
-          {/* <FlexContainer>
-            <ColumnHeading>Skills</ColumnHeading>
-            <ExtraInfo>.personal</ExtraInfo>
+          <FlexContainer>
+            <ColumnHeading>Languages</ColumnHeading>
           </FlexContainer>
-          <SkillsPersonal /> */}
+          <LanguageSkills />
         </Column>
-        {/* <FromNowContainer>
-          <FromNow />
-        </FromNowContainer> */}
+        <Column>
+          <FlexContainer>
+            <ColumnHeading>Work</ColumnHeading>
+            <ExtraInfo>.a time travel</ExtraInfo>
+          </FlexContainer>
+          <ColumnText>
+            <WorkExperience />
+          </ColumnText>
+          <FlexContainer>
+            <ColumnHeading>Education</ColumnHeading>
+            <ExtraInfo>.way back</ExtraInfo>
+          </FlexContainer>
+          <EducationMixed />
+          <FlexContainer>
+            <ColumnHeading>Design skills</ColumnHeading>
+            <ExtraInfo>.feels like forever</ExtraInfo>
+          </FlexContainer>
+          <SkillsWayback />
+        </Column>
       </Main>
       {/* <QrCode src="./KZkub.jpg" alt="QR code" /> */}
       <NoteItem>thanks.</NoteItem>
+      <NoteItem>kz</NoteItem>
     </Container>
   )
 }
@@ -122,12 +113,23 @@ const JoyText = styled.p`
   font-family: Ubuntu;
   font-weight: 500;
   color: #141414;
+  @media (min-width: 530px) {
+    /* font-size: 1.5rem; */
+  }
+  @media (min-width: 768px) {
+    font-size: 1.75rem;
+  }
+  @media (min-width: 990px) {
+    font-size: 1.1rem;
+    margin-left: -8.6rem;
+    text-align: left;
+    grid-column: 2 / 3;
+  }
 `
 const Header = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 2fr 3fr 1fr;
-  /* max-width: 40px; */
 `
 const Hello = styled.h1`
   display: grid;
@@ -138,15 +140,15 @@ const Hello = styled.h1`
   font-weight: 600;
   color: #000000;
   transform: translate(-14%, -16%) rotate(-90deg);
-  /* transform: rotate(-90deg); */
-  /* margin-top: -1.5rem; */
-  /* transform: translate(20%); */
-
   @media (min-width: 530px) {
+    /* font-size: 1.5rem; */
   }
   @media (min-width: 768px) {
+    font-size: 1.75rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 990px) {
+    font-size: 2.5rem;
+    transform: translate(-6%, -32%) rotate(-90deg);
   }
 `
 const ImageVerticalLine = styled.div`
@@ -162,8 +164,13 @@ const ImageVerticalLine = styled.div`
   @media (min-width: 530px) {
   }
   @media (min-width: 768px) {
+    left: -2rem;
+    grid-column: 2 / 3;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 990px) {
+    left: -2rem;
+    grid-column: 2 / 3;
+    margin-top: 4.8rem;
   }
 `
 const Img = styled.img`
@@ -174,8 +181,17 @@ const Img = styled.img`
   height: auto;
   margin-left: 2.5rem;
   opacity: 1;
+  @media (min-width: 460px) {
+    max-width: 90%;
+  }
   @media (min-width: 768px) {
-    max-width: 30%;
+    max-width: 80%;
+  }
+  @media (min-width: 990px) {
+    display: grid;
+    max-width: 70%;
+    margin-left: 7rem;
+    margin-top: 5rem;
   }
 `
 
@@ -190,7 +206,8 @@ const ShortInfo = styled.div`
   }
   @media (min-width: 768px) {
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 990px) {
+    padding-right: 5.5rem;
   }
 `
 
@@ -206,6 +223,7 @@ const ShortInfoText = styled.p`
   @media (min-width: 768px) {
   }
   @media (min-width: 1024px) {
+    font-size: 1.1rem;
   }
 `
 
@@ -225,32 +243,31 @@ const VerticalLine = styled.span`
 
 const Main = styled.div`
   display: grid;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   grid-gap: 1.5rem;
   padding: 1.5rem;
   margin-top: 0.2rem;
   @media (min-width: 530px) {
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
   }
-  /* @media (min-width: 768px) {
-    grid-template-columns: 3fr 1fr;
-  } */
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 1fr;
+  }
   /* @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   } */
 `
 
 const SectionGroup = styled.div``
+//making main start at the same top-line
 const Column = styled.div`
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items; center:
   margin: 2rem;
   width: 100%;
 
-`
-
+` //make .info flex after heading
 const FlexContainer = styled.div`
   display: flex;
   align-items: center;
@@ -277,10 +294,9 @@ const ExtraInfo = styled.p`
 `
 const Design = styled.div`
   font-style: italic;
-  margin-left: 1rem;
+  margin-left: 1.2rem;
   font-size: 0.9rem;
-  font-weight: 600;
-  padding-top: 1rem;
+  font-weight: 300;
   padding-bottom: 0.5rem;
 `
 const ColumnText = styled.div`
@@ -291,7 +307,6 @@ const NoteItem = styled.p`
   font-weight: 300;
   font-style: italic;
   font-size: 1.2rem;
-  margin-bottom: 8rem;
 `
 // const QrCode = styled.img`
 //   position: absolute;

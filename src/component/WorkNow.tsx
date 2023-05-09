@@ -14,14 +14,14 @@ const jobs = [
   'Workshops',
   'Product dev.',
   'Business dev.',
-  'Project mgt.',
+  'Project mgmt.',
 ]
 const customers = [
   'Plaza Kvinna',
   'Saint Laurent',
   'Sport Max',
   'Lindex',
-  'Swe.Textile School',
+  'Swe. School of Textile',
   'Drivhuset',
   'Television',
   'Melodifestivalen',
@@ -56,6 +56,7 @@ const WorkNow = () => {
 
 const Table = styled.table`
   display: grid;
+  grid-template-columns: repeat(200px, 1fr);
   justify-content: center;
   border-collapse: collapse;
   width: 100%;
@@ -66,14 +67,18 @@ const TableRow = styled.tr`
   }
 `
 const TableColumn = styled.td`
-'  text-align: left;
+  text-align: left;
+  padding: 0.5rem;
+  &:first-child {
+    padding-right: 1.5rem;
+  }
+  &:last-child {
+    padding-left: 1.5rem;
+  }
 `
 const ColumnText = styled.p`
   font-size: 0.8rem;
   line-height: 1rem;
-  align-items: center;
-  margin-left: 1.2rem;
-  margin-right: 2rem;
 `
 
 export default WorkNow

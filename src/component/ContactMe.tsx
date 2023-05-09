@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import SignupForm from './MySignupForm'
 
 const me = {
-  name: 'Lets grab a coffee...',
+  name: "Let's grab a coffee...",
   imageSrc: './bild_86.jpg',
 }
 
@@ -16,8 +16,7 @@ const ContactMe = () => {
       </Header>
       <Content>
         <Text>
-          Lets meet and see where it takes us. Maybe we can make some miracle
-          happends.
+          Say hello and meet me for a talk and see where it takes us.
           <Link to="/">back to portfolio</Link>
         </Text>
       </Content>
@@ -69,15 +68,16 @@ const Img = styled.img`
 
 const Content = styled.div`
   max-width: 22rem;
-
-  margin: 2rem 2.2rem 2rem 2rem;
-  padding: 3rem 2rem 2rem;
+  margin: 2.5rem 2.2rem 2rem 2rem;
+  padding: 2.5rem 2rem 2rem;
   background-color: #f7f7f7;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 
+  @media (min-width: 468px) {
+    padding: 2.5rem 2rem 2rem 2rem;
+  }
   @media (min-width: 768px) {
     margin-top: 4rem;
-    max-width: 40rem;
   }
 `
 

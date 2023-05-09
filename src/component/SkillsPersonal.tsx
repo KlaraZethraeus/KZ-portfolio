@@ -5,7 +5,7 @@ const skills = [
   'Skating',
   'Painting',
   'Gardening',
-  'Medition',
+  'Meditation',
   'Running',
   'Yoga',
 ]

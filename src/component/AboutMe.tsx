@@ -6,7 +6,7 @@ const AboutMe = () => {
     <div className="about-me">
       <div className="portrait">
         <h1>me.</h1>
-        <p>Some moodboards to get a hint of my life.</p>
+        <p>a visual story of moments that matter.</p>
       </div>
       <div className="images">
         <div className="image ">
@@ -30,10 +30,6 @@ const AboutMe = () => {
           <h3>inspiration.</h3>
           <div>
             <p className="important">
-              {/* As they point out:
-            "when we talk about mind shift, when we talk
-            about growth that mattewrs"
-            I think the basic human challange is this: */}
               It is difficult to learn if you already know...
             </p>
           </div>

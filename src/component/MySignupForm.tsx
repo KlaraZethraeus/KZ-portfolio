@@ -111,18 +111,9 @@ const SignupForm = () => {
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            //   alert(JSON.stringify(formData, null, 2))
-            //   setFormData({
-            //     firstName: values.firstName,
-            //     lastName: values.lastName,
-            //     email: values.email,
-            //     subject: values.Subject,
-            //   })
-            //   setSubmitting(false)
-            // }, 400)
             toast.success(
               `Hi ${values.firstName}!
-               Thanks for contacting me. I will shortly get back to you.
+               Thanks for contacting me. I will return shortly.
                  All the best Klara`
             )
             setFormData({
@@ -141,7 +132,7 @@ const SignupForm = () => {
               label="First Name"
               name="firstName"
               type="text"
-              placeholder="Klara"
+              placeholder="Nico"
               id="firstName"
             />
 
@@ -149,7 +140,7 @@ const SignupForm = () => {
               label="Last Name"
               name="lastName"
               type="text"
-              placeholder="Zethraeus"
+              placeholder="Mindler"
               id="firstName"
             />
 
@@ -157,7 +148,7 @@ const SignupForm = () => {
               label="Email Address"
               name="email"
               type="email"
-              placeholder="klara@aroundkz.com"
+              placeholder="kz@aroundkz.com"
               id="email"
             />
 
@@ -172,17 +163,7 @@ const SignupForm = () => {
             <MyCheckbox name="acceptedTerms">
               I accept the terms of GDPR
             </MyCheckbox>
-            {/* const notify = () => toast("Wow so easy!"); */}
-            <button
-              // onClick={() =>
-              //   toast(
-              //     `Thanks for contacting me ${'hej'}! I will get back to you soon.`
-              //   )
-              // }
-              type="submit"
-            >
-              Submit
-            </button>
+            <button type="submit">Send</button>
             <ToastContainer
               className="foo"
               style={{

@@ -1,4 +1,3 @@
-//useeffect anropar stilleben med fetch och returnerar promise, callback med props som gör att bilderna visas i annan komponent
 import { useEffect } from 'react'
 
 type ImageData = {

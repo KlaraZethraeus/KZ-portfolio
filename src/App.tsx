@@ -11,7 +11,6 @@ import { GapButton } from './component/GapButton'
 import AboutMe from './component/AboutMe'
 import InspirationGrid from './component/InspirationGrid'
 import PortFolio from './component/PortFolio'
-// import ImagePortfolio from './component/ImagePortfolio'
 import HeaderMobile from './component/HeaderMobile'
 import { SignupProvider } from './component/context/SignupContext'
 import PhotoGallery from './component/PhotoGallery'
@@ -59,32 +58,7 @@ function App() {
           path: '/aboutme',
         },
         {
-          element: (
-            // <div>
-            //   <ToastContainer
-            //     className="foo"
-            //     style={{
-            //       width: '20rem',
-            //       height: '10rem',
-            //       fontSize: '1rem',
-            //       marginTop: '1.5rem',
-            //       padding: '1rem',
-            //       // transitionDuration: '1s',
-            //       lineHeight: '1.5',
-            //       fontStyle: 'italic',
-            //       fontFamily: 'Arial, sans-serif',
-            //       // background: '#cad9d7',
-            //       // boxShadow: '0 0 10px rgba(0,0,0,0.2)',
-            //     }}
-            //     position="bottom-right"
-            //     autoClose={4000}
-            //     hideProgressBar={true}
-            //     closeOnClick
-            //     icon={false}
-            //   />
-            <ContactMe />
-            // </div>
-          ),
+          element: <ContactMe />,
           path: '/contactme',
         },
         {

@@ -4,13 +4,13 @@ const EducationMixed = () => {
   const jobs = [
     {
       year: '13',
-      title: 'DASVID JONES',
+      title: 'DAVID JONES',
       description: 'Fashion entrepreneurship',
       customers: 'Brand building',
     },
     {
       year: '11',
-      title: 'Maj-La Pizzelli',
+      title: 'MAJ-LA PIZZELLI',
       description: 'Fashion entrepreneurship',
       customers: 'Collection planning',
     },
@@ -20,12 +20,12 @@ const EducationMixed = () => {
       description: ' Incubator program',
       customers: 'Business development',
     },
-    // {
-    //   year: '01 - 03',
-    //   title: 'BECKMANS',
-    //   description: 'College Of Design',
-    //   customers: 'Fashion',
-    // },
+    {
+      year: '01 - 03',
+      title: 'BECKMANS',
+      description: 'College Of Design',
+      customers: 'Fashion',
+    },
     {
       year: '03 - 06',
       title: 'TEXTILE ACEDEMY',
@@ -44,15 +44,15 @@ const EducationMixed = () => {
       description: 'Paul Valèry ',
       customers: 'French',
     },
-    // {
-    //   year: '97 - 00',
-    //   title: 'BALLET ACEDEMY',
-    //   description: 'Professional dancers education',
-    //   customers: 'Mixed dance styles',
-    // },
     {
       year: '97 - 00',
-      title: 'SOCIAL SIENCE',
+      title: 'BALLET ACEDEMY',
+      description: 'Professional dancers education',
+      customers: 'Mixed dance styles',
+    },
+    {
+      year: '97 - 00',
+      title: 'SOCIAL SCIENCE',
       description: 'High school',
       customers: 'Distance',
     },
@@ -88,70 +88,6 @@ const EducationMixed = () => {
   )
 }
 
-//   return (
-//     <Table>
-//       <tbody>
-//         <TableRow>
-//           <TableColumn>
-//             {jobs.slice(0, 5).map((job) => (
-//               <JobContainer key={job.title}>
-//                 <YearTitle>
-//                   {job.title} | {job.year}
-//                 </YearTitle>
-//                 {job.title === 'Freelance/consultant' ? (
-//                   <StyledDescription>
-//                     {job.description.split(',').map((item, index) => (
-//                       <li key={index}>{item.trim()}</li>
-//                     ))}
-//                   </StyledDescription>
-//                 ) : (
-//                   <Description>{job.description}</Description>
-//                 )}
-//                 {job.title === 'Freelance' ? (
-//                   <StyledCustomers>
-//                     {job.customers.split(',').map((item, index) => (
-//                       <li key={index}>{item.trim()}</li>
-//                     ))}
-//                   </StyledCustomers>
-//                 ) : (
-//                   job.customers && <Customers>{job.customers}</Customers>
-//                 )}
-//               </JobContainer>
-//             ))}
-//           </TableColumn>
-//           <TableColumn>
-//             {jobs.slice(5).map((job) => (
-//               <JobContainer key={job.title}>
-//                 <YearTitle>
-//                   {job.title} | {job.year}
-//                 </YearTitle>
-//                 {job.title === 'Freelance/consultant' ? (
-//                   <StyledDescription>
-//                     {job.description.split(',').map((item, index) => (
-//                       <li key={index}>{item.trim()}</li>
-//                     ))}
-//                   </StyledDescription>
-//                 ) : (
-//                   <Description>{job.description}</Description>
-//                 )}
-//                 {job.title === 'Freelance' ? (
-//                   <StyledCustomers>
-//                     {job.customers.split(',').map((item, index) => (
-//                       <li key={index}>{item.trim()}</li>
-//                     ))}
-//                   </StyledCustomers>
-//                 ) : (
-//                   job.customers && <Customers>{job.customers}</Customers>
-//                 )}
-//               </JobContainer>
-//             ))}
-//           </TableColumn>
-//         </TableRow>
-//       </tbody>
-//     </Table>
-//   )
-// }
-
 const EducationMixedContainer = styled.div`
   display: grid;
   justify-content: center;
@@ -159,20 +95,12 @@ const EducationMixedContainer = styled.div`
   width: 100%;
   margin-bottom: 1.5rem;
 `
-// const TableRow = styled.tr`
-//   &:nth-child(even) {
-//   }
-// `
-// const TableColumn = styled.td`
-//   text-align: left;
-//   vertical-align: top;
-// `
 
 const JobContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 0.5rem;
-  margin-right: 2rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 `
 const YearTitle = styled.div`
   font-size: 1rem;

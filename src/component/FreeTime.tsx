@@ -1,23 +1,23 @@
 import styled from 'styled-components'
 
-const other = [
+const SpareTime = [
   'Love to dance.',
-  'Raises to artists like Kendrick Lamar, Leonard Cohen and Mattias Alkberg.',
+  'Kendrick Lamar, Leonard Cohen and Mattias Alkberg makes me crank up the volume.',
   'Got the rest of my family into skateboarding.',
-  'Grows as much as goes on a plot of land.',
+  'Grows as much as possible on a plot of land.',
   'Running, preferably in the woods, preferably in the dark with a headlamp.',
   'Green card in climbing, despite fear of heights.',
-  'As a 15-year-old, I went to Sthlm to attend the Ballet Academy. Studied parallel high school remotely.',
-  'discovered India, Istanbul, Sri Lanka, Gambia alone.',
+  'Moved as a 15-year-old to Sthlm to attend the Ballet Academy, in parallel with high school distance-learning.',
+  'Discovered India, Istanbul, Sri Lanka, Gambia alone.',
   'Was in Kenya and Tanzania for a longer period as an 8-year-old. Dad helped with medicine and care in villages, schools and hospitals.',
   'Likes to sleep under the open sky',
   'Hugging trees',
 ]
 
-const FromNow = () => {
+const FreeTime = () => {
   return (
     <List>
-      {other.map((skill) => (
+      {SpareTime.map((skill) => (
         <ListItem key={skill}>
           <SkillText>{skill}</SkillText>
         </ListItem>
@@ -42,4 +42,4 @@ const SkillText = styled.span`
   letter-spacing: 0.02rem;
 `
 
-export default FromNow
+export default FreeTime

@@ -20,7 +20,6 @@ const skills = [
   'Websocket',
   'SASS',
   'BOOTSTRAP',
-  //'Agil utveckling',
 ]
 
 const SomeSkills = () => {
@@ -46,6 +45,7 @@ const SomeSkills = () => {
 
 const Table = styled.table`
   display: grid;
+  grid-template-columns: repeat(200px, 1fr);
   justify-content: center;
   border-collapse: collapse;
   width: 100%;
@@ -57,13 +57,17 @@ const TableRow = styled.tr`
 `
 const TableColumn = styled.td`
   text-align: left;
+  padding: 0.5rem;
+  &:first-child {
+    padding-right: 2.5rem;
+  }
+  &:last-child {
+    padding-left: 2.5rem;
+  }
 `
 const ColumnText = styled.p`
   font-size: 0.8rem;
   line-height: 1rem;
-  align-items: center;
-  margin-left: 1rem;
-  margin-right: 3.4rem;
 `
 
 export default SomeSkills

@@ -13,12 +13,3 @@ export const FeedbackProvider = ({ children }: FeedbackProviderProps) => {
     </FeedbackContext.Provider>
   )
 }
-// export const FeedbackProvider = ({ children }) => {
-//   const [feedbackMessage, setFeedbackMessage] = useState('')
-
-//   return (
-//     <FeedbackContext.Provider value={{ feedbackMessage, setFeedbackMessage }}>
-//       {children}
-//     </FeedbackContext.Provider>
-//   )
-// }
